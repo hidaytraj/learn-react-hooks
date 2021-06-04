@@ -1,5 +1,3 @@
-
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -26,24 +24,89 @@
   }
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 nav {
   border-bottom: 2px solid #393a3b;
-  margin-bottom: 10px;
 }
 
 nav ul {
   display: flex;
   justify-items: legacy;
   list-style-type: none;
+  margin: 0;
 }
 
-nav ul li {
-  margin-right: 15px;
+nav ul li a {
+  background: #e91e63;
+    padding: 5px 10px;
+    display: block;
+    margin: 9px 5px;
+    color: #fff;
+    font-size: 17px;
+    text-transform: capitalize;
+    border-radius: 3px;
+}
+
+nav ul li a:hover {
+  background: #009688;
 }
 
 .example-area {
-  background: #afafb1;
+  background: #e1e1e1;
   padding: 1rem;
   max-width: 1100px;
   margin: 1rem auto;
+  color: #1d1d1d;
+  text-transform: capitalize;
+}
+
+h3 {
+  border-bottom: 2px solid;
+  padding-bottom: 11px;
+  color: #565656;
+}
+
+button,
+input {
+  border: 0;
+  padding: 4px 8px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  background: #282c34;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.panel-nav {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.panel-nav li {
+  width: 46%;
+}
+
+.panel-nav li a {
+  text-transform: capitalize;
+  font-size: 19px;
+  background: #009688;
+  color: white;
+  padding: 8px;
+  display: block;
+  margin: 4px;
+}
+
+.panel-nav li a:hover {
+  background: rebeccapurple;
+  text-decoration: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

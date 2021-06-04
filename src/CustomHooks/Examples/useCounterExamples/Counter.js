@@ -6,7 +6,7 @@ const Counter = () => {
 
     return (
         <div className="container example-area">
-            <h2>Custom useCount example 1</h2>
+            <h4>example 1</h4>
             <button onClick={() => increement()}>++</button>
             <button onClick={() => decreement()}>--</button>
             <h2>{count}</h2>

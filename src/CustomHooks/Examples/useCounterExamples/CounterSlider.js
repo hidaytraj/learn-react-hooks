@@ -5,7 +5,7 @@ const CounterSlider = () => {
 
     return (
         <div className="container example-area">
-            <h2>Custom useCount example 2</h2>
+            <h4>example 2</h4>
 
             <button onClick={() => decreement()}>-</button>
             <input type="range" value={count} />

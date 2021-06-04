@@ -12,12 +12,24 @@ import BlogList from './components/Assignments/Blog/BlogList';
 import BlogDetails from './components/Assignments/Blog/BlogDetails';
 import UseRefExample from './components/Examples/UseRefExample';
 import { CustomHooks } from './CustomHooks/Examples/CustomHooks';
+import { useMatchFetch } from "./CustomHooks/UseMatchFetch";
 
 function App() {
+  const render = useMatchFetch("https://jsonplaceholder.typicode.com/todos/1");
+
+  //const render = useMatchFetch("https://jsonplaceholder.typicode.com/posts");
+  // https://jsonplaceholder.typicode.com/users
+
 
   return (
     <Router>
-
+      {
+        render({
+          pending: () => <div>Loading...</div>,
+          error: (err) => <div>{err.toString()}</div>,
+          data: (data) => <pre>{JSON.stringify(data, null, 2)}</pre>
+        })
+      }
       <div className="App">
         <header className="App-header">
           <nav>

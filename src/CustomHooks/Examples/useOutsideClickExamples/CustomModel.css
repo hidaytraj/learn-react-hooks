@@ -1,0 +1,20 @@
+.model-container {
+    position: absolute;
+    background: black;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    margin: auto;
+}
+
+.model-container .model-content {
+    background: #fff;
+    padding: 1rem;
+    max-width: 421px;
+    margin: 0 auto;
+    top: 39vh;
+    position: absolute;
+    left: 29vw;
+}

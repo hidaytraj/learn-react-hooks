@@ -1,59 +1,78 @@
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
 } from "react-router-dom";
 
 import UseCounterExamples from "./useCounterExamples/UseCounterExamples";
-
+import UseListExamples from "./useListExamples/UseListExamples";
+import UseHoverExamples from "./useHoverExamples/UseHoverExamples";
+import UseOutSideClickExamples from "./useOutsideClickExamples/UseOutsideClickExamples";
 
 export function CustomHooks() {
-  let match = useRouteMatch();
+    let match = useRouteMatch();
 
-  return (
-    <div>
-      <h2>Custom Hooks Examples</h2>
+    return (
+        <div>
+            <h1>Custom Hooks Examples</h1>
 
-      <ul>
-      <li>
-          <Link to={`${match.url}/useCounter`}>useCounter</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/useCounters`}>useCounters</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
+            <ul className="panel-nav">
+                <li>
+                    <Link to={`${match.url}/useCounter`}>useCounter</Link>
+                </li>
+                <li>
+                    <Link to={`${match.url}/useList`}>useList</Link>
+                </li>
+
+                <li>
+                    <Link to={`${match.url}/useHover`}>useHover</Link>
+                </li>
+
+
+                <li>
+                    <Link to={`${match.url}/useOutsideClick`}>useOutsideClick</Link>
+                </li>
+
+                
+                <li>
+                    <Link to={`${match.url}/props-v-state`}>
+                        Props v. State
           </Link>
-        </li>
-      </ul>
+                </li>
+            </ul>
 
-      {/* The Topics page has its own <Switch> with more routes
+            {/* The Topics page has its own <Switch> with more routes
           that build on the /topics URL path. You can think of the
           2nd <Route> here as an "index" page for all topics, or
           the page that is shown when no topic is selected */}
-      <Switch>
-        <Route path={`${match.path}/:examplesId`}>
-          <Example />
-        </Route>
-        <Route path={match.path}>
-          <h3>Please select a Example.</h3>
-        </Route>
-      </Switch>
-    </div>
-  );
+            <Switch>
+                <Route path={`${match.path}/:examplesId`}>
+                    <Example />
+                </Route>
+                <Route path={match.path}>
+                    <h3>Please select a Example.</h3>
+                </Route>
+            </Switch>
+        </div>
+    );
 }
 
 function Example() {
-  let { examplesId } = useParams();
+    let { examplesId } = useParams();
 
-  if(examplesId === 'useCounter') {
-    return <UseCounterExamples />
-  } else {
-    return <h3>Requested examplesId ID: {examplesId}</h3>;
-  }
- 
+    if (examplesId === 'useCounter') {
+        return <UseCounterExamples />
+    } else if (examplesId === 'useList') {
+        return <UseListExamples />
+    } else if (examplesId === 'useHover') {
+        return <UseHoverExamples />
+    } else if (examplesId === 'useOutsideClick') {
+        return <UseOutSideClickExamples />
+    } else {
+        return <h3>Requested examplesId ID: {examplesId}</h3>;
+    }
+
 }
