@@ -110,3 +110,14 @@ button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+input[type=url] {
+  text-transform: lowercase;
+  width: 85%;
+}
+
+.link {
+  border: 0;
+  background: transparent;
+  color: blueviolet;
+}

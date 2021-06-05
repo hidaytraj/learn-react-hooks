@@ -11,6 +11,8 @@ import UseCounterExamples from "./useCounterExamples/UseCounterExamples";
 import UseListExamples from "./useListExamples/UseListExamples";
 import UseHoverExamples from "./useHoverExamples/UseHoverExamples";
 import UseOutSideClickExamples from "./useOutsideClickExamples/UseOutsideClickExamples";
+import UseFetchExamples from "./useFetchExamples/UseFetchExamples";
+
 
 export function CustomHooks() {
     let match = useRouteMatch();
@@ -36,11 +38,10 @@ export function CustomHooks() {
                     <Link to={`${match.url}/useOutsideClick`}>useOutsideClick</Link>
                 </li>
 
-                
+
                 <li>
-                    <Link to={`${match.url}/props-v-state`}>
-                        Props v. State
-          </Link>
+                    <Link to={`${match.url}/useFetch`}>
+                        useFetch</Link>
                 </li>
             </ul>
 
@@ -71,6 +72,9 @@ function Example() {
         return <UseHoverExamples />
     } else if (examplesId === 'useOutsideClick') {
         return <UseOutSideClickExamples />
+    }
+    else if (examplesId === 'useFetch') {
+        return <UseFetchExamples />
     } else {
         return <h3>Requested examplesId ID: {examplesId}</h3>;
     }
